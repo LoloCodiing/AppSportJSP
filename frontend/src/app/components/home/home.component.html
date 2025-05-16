@@ -27,7 +27,7 @@
       </p>
       <p *ngIf="match.status === 'Terminé'" class="card-text mb-2">
         <i class="bi bi-bar-chart-line text-muted"></i>
-        <strong> Equipes : {{ getTeamName(match.team1_id) }} - {{ getTeamName(match.team2_id) }} </strong>
+        <strong> Equipes : {{ match.team1.name }} - {{ match.team2.name }} </strong>
       </p>
       <a [routerLink]="['/match', match.id]" class="btn btn-outline-dark btn-sm">Voir détails</a>
     </div>

@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  categories = ['TOP 14', 'PRO D2', 'Nationale', 'Nationale 2', 'Fédérale 1', 'Fédérale 2', 'Fédérale 3', 'Régionale 1', 'Régionale 2', 'Régionale 3']; // ou dynamiquement plus tard
+  categories = ['TOP 14', 'PRO D2', 'Nationale', 'Nationale 2', 'Fédérale 1', 'Fédérale 2', 'Fédérale 3', 'Régionale 1', 'Régionale 2', 'Régionale 3'];
 
   constructor() {}
 

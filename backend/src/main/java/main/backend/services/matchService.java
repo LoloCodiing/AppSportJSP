@@ -24,9 +24,9 @@ public class matchService {
         if (existingMatch != null) {
             existingMatch.setCategory(newMatchData.getCategory());
             existingMatch.setStadium(newMatchData.getStadium());
-            existingMatch.setScoreTeam1(newMatchData.getScoreTeam1());
-            existingMatch.setScoreTeam2(newMatchData.getScoreTeam2());
-            existingMatch.setDateMatch(newMatchData.getDateMatch());
+            existingMatch.setScore_team1(newMatchData.getScore_team1());
+            existingMatch.setScore_team2(newMatchData.getScore_team2());
+            existingMatch.setDate_match(newMatchData.getDate_match());
             existingMatch.setStatus(newMatchData.getStatus());
             existingMatch.setTeam1(newMatchData.getTeam1());
             existingMatch.setTeam2(newMatchData.getTeam2());

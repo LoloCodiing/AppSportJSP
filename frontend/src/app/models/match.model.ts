@@ -1,7 +1,9 @@
+import {Team} from './team.model';
+
 export interface Match {
   id: number;
-  team1_id: number;
-  team2_id: number;
+  team1: Team;
+  team2: Team;
   category: string;
   date_match: string;
   status: string;

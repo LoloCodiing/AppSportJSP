@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @Tag(name = "Controller des Matchs", description = "Fait pour controller les matchs")
-@RequestMapping("match")
+@RequestMapping("matches")
 public class matchRestController {
 
     @Autowired
@@ -36,9 +37,9 @@ public class matchRestController {
     public void increment(int id, boolean isTeam1, int scoreToAdd) {
         matchEntity match = matchService.getMatchById(id);
         if (isTeam1) {
-            match.setScoreTeam1(match.getScoreTeam1() + scoreToAdd);
+            match.setScore_team1(match.getScore_team1() + scoreToAdd);
         }else{
-            match.setScoreTeam2(match.getScoreTeam2() + scoreToAdd);
+            match.setScore_team2(match.getScore_team2() + scoreToAdd);
         }
         matchService.saveMatch(match);
     }

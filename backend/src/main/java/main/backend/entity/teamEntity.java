@@ -22,7 +22,7 @@ public class teamEntity {
     private String name;
 
     @Column(name = "url_team", nullable = false)
-    private String urlTeam;
+    private String url_team;
 
     @Column(name = "category", nullable = false)
     private String category;

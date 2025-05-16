@@ -5,12 +5,12 @@ import { Match } from '../models/match.model';
 
 @Injectable({ providedIn: 'root' })
 export class MatchService {
-  private apiUrl = 'http://localhost:3000/matches';
+  private apiUrl = 'http://localhost:8080/matches';
 
   constructor(private http: HttpClient) {}
 
   getMatches(): Observable<Match[]> {
-    return this.http.get<Match[]>(this.apiUrl);
+    return this.http.get<Match[]>(`${this.apiUrl}/all`);
   }
 
   getMatch(id: number): Observable<Match> {

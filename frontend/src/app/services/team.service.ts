@@ -5,11 +5,11 @@ import { Team } from '../models/team.model';
 
 @Injectable({ providedIn: 'root' })
 export class TeamService {
-  private apiUrl = 'http://localhost:3000/teams';
+  private apiUrl = 'http://localhost:8080/teams';
 
   constructor(private http: HttpClient) {}
 
   getTeams(): Observable<Team[]> {
-    return this.http.get<Team[]>(this.apiUrl);
+    return this.http.get<Team[]>(`${this.apiUrl}/all`);
   }
 }

@@ -84,15 +84,6 @@ export class HomeComponent implements OnInit {
     this.updateMatchLists();
   }
 
-  getCategories(): string[] {
-    const all = this.matches.map(m => m.category);
-    return [...new Set(all)];
-  }
-
-  getTeamName(id: number): string {
-    const team = this.teams.find(t => Number(t.id) === Number(id));
-    return team ? team.name : `Équipe inconnue`;
-  }
 
 
 }

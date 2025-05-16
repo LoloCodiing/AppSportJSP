@@ -25,13 +25,13 @@ public class matchEntity {
     private String stadium;
 
     @Column(name = "score_team1", nullable = false)
-    private int scoreTeam1;
+    private int score_team1;
 
     @Column(name = "score_team2", nullable = false)
-    private int scoreTeam2;
+    private int score_team2;
 
     @Column(name = "date_match", nullable = false)
-    private LocalDateTime dateMatch;
+    private LocalDateTime date_match;
 
     @Column(name = "status", nullable = false)
     private String status;
