@@ -1,5 +1,16 @@
-<div class="container">
-  <h1 class="text-3xl font-bold underline">
-    Page d'accueil
-  </h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <a class="navbar-brand" routerLink="/">Rugby France</a>
+
+  <div class="ms-auto d-flex align-items-center gap-2">
+    <p class="mb-0 text-secondary">Rechercher par Championnat</p>
+    <select class="form-select w-auto" (change)="onCategorySelect($event)">
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+    <a class="btn btn-secondary ml-8" routerLink="/">Administration</a>
+  </div>
+
+</nav>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet>
 </div>

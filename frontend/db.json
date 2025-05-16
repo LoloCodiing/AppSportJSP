@@ -1,0 +1,186 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "name": "Toulouse",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f2/Logo_Stade_Toulousain.svg/1200px-Logo_Stade_Toulousain.svg.png",
+      "category": "TOP 14",
+      "stadium": "Stadium de Toulouse"
+    },
+    {
+      "id": 2,
+      "name": "La Rochelle",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/8/88/Stade_rochelais_logo_2020.svg/1200px-Stade_rochelais_logo_2020.svg.png",
+      "category": "TOP 14",
+      "stadium": "Stade Marcel-Deflandre"
+    },
+    {
+      "id": 3,
+      "name": "Racing 92",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/9/9e/Logo_Racing_92_2015.svg/1200px-Logo_Racing_92_2015.svg.png",
+      "category": "TOP 14",
+      "stadium": "Paris La Défense Arena"
+    },
+    {
+      "id": 4,
+      "name": "Clermont",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/6/65/Logo_ASM_Clermont_Auvergne.svg/1200px-Logo_ASM_Clermont_Auvergne.svg.png",
+      "category": "TOP 14",
+      "stadium": "Stade Marcel-Michelin"
+    },
+    {
+      "id": 5,
+      "name": "Castres",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/0/0c/Logo_Castres_Olympique.svg/1200px-Logo_Castres_Olympique.svg.png",
+      "category": "TOP 14",
+      "stadium": "Stade Pierre-Fabre"
+    },
+    {
+      "id": 6,
+      "name": "Bayonne",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/e/eb/Aviron_Bayonnais_rugby_logo_2010.svg/1200px-Aviron_Bayonnais_rugby_logo_2010.svg.png",
+      "category": "TOP 14",
+      "stadium": "Stade Jean-Dauger"
+    },
+    {
+      "id": 7,
+      "name": "Pau",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Section_Paloise_logo_2015.svg/1200px-Section_Paloise_logo_2015.svg.png",
+      "category": "TOP 14",
+      "stadium": "Stade du Hameau"
+    },
+    {
+      "id": 8,
+      "name": "Lyon",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/de/Lyon_ou_Rugby_logo_2012.svg/1200px-Lyon_ou_Rugby_logo_2012.svg.png",
+      "category": "TOP 14",
+      "stadium": "Matmut Stadium de Gerland"
+    },
+    {
+      "id": 9,
+      "name": "Perpignan",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/dc/Logo_USAP_2011.svg/1200px-Logo_USAP_2011.svg.png",
+      "category": "TOP 14",
+      "stadium": "Stade Aimé-Giral"
+    },
+    {
+      "id": 10,
+      "name": "Montpellier",
+      "url_team": "https://upload.wikimedia.org/wikipedia/fr/thumb/7/7f/Logo_MHR_2021.svg/1200px-Logo_MHR_2021.svg.png",
+      "category": "TOP 14",
+      "stadium": "GGL Stadium"
+    }
+  ],
+  "matches": [
+    {
+      "id": 1,
+      "category": "TOP 14",
+      "stadium": "Stadium de Toulouse",
+      "team1_id": 1,
+      "team2_id": 2,
+      "score_team1": 30,
+      "score_team2": 25,
+      "date_match": "2025-05-17T18:00:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 2,
+      "category": "TOP 14",
+      "stadium": "Stade Marcel-Deflandre",
+      "team1_id": 2,
+      "team2_id": 3,
+      "score_team1": 22,
+      "score_team2": 28,
+      "date_match": "2025-05-10T20:45:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 3,
+      "category": "TOP 14",
+      "stadium": "Stade Marcel-Michelin",
+      "team1_id": 4,
+      "team2_id": 1,
+      "score_team1": 15,
+      "score_team2": 35,
+      "date_match": "2025-05-03T17:00:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 4,
+      "category": "TOP 14",
+      "stadium": "Stade Pierre-Fabre",
+      "team1_id": 5,
+      "team2_id": 6,
+      "score_team1": 19,
+      "score_team2": 19,
+      "date_match": "2025-05-01T14:00:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 5,
+      "category": "TOP 14",
+      "stadium": "Stade Jean-Dauger",
+      "team1_id": 6,
+      "team2_id": 7,
+      "score_team1": 10,
+      "score_team2": 12,
+      "date_match": "2025-04-28T15:30:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 6,
+      "category": "TOP 14",
+      "stadium": "Matmut Stadium de Gerland",
+      "team1_id": 8,
+      "team2_id": 9,
+      "score_team1": 26,
+      "score_team2": 21,
+      "date_match": "2025-04-25T19:00:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 7,
+      "category": "TOP 14",
+      "stadium": "Stade Aimé-Giral",
+      "team1_id": 9,
+      "team2_id": 10,
+      "score_team1": 17,
+      "score_team2": 34,
+      "date_match": "2025-04-20T17:00:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 8,
+      "category": "TOP 14",
+      "stadium": "GGL Stadium",
+      "team1_id": 10,
+      "team2_id": 3,
+      "score_team1": 23,
+      "score_team2": 23,
+      "date_match": "2025-04-15T21:00:00",
+      "status": "Terminé"
+    },
+    {
+      "id": 9,
+      "category": "TOP 14",
+      "stadium": "Stadium de Toulouse",
+      "team1_id": 1,
+      "team2_id": 5,
+      "score_team1": null,
+      "score_team2": null,
+      "date_match": "2025-05-24T20:45:00",
+      "status": "Prévu"
+    },
+    {
+      "id": 10,
+      "category": "TOP 14",
+      "stadium": "Paris La Défense Arena",
+      "team1_id": 3,
+      "team2_id": 4,
+      "score_team1": null,
+      "score_team2": null,
+      "date_match": "2025-05-25T21:00:00",
+      "status": "Prévu"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+<div *ngIf="match as m" class="card border-0 shadow-sm mt-4 bg-light">
+  <div class="card-body">
+    <h2 class="card-title mb-3">
+      🏉 <strong> Match #{{ m.id }}</strong>
+      <span class="badge bg-dark ms-2">{{ m.category }}</span>
+    </h2>
+
+    <p class="card-text mb-2">
+      <i class="bi bi-geo-alt-fill text-muted"></i>
+      <strong> Stade :</strong> {{ m.stadium }}
+    </p>
+
+    <p class="card-text mb-2">
+      <i class="bi bi-calendar-event text-muted"></i>
+      <strong> Date :</strong>
+      {{ m.date_match | date:'fullDate' }} à {{ m.date_match | date:'shortTime' }}
+    </p>
+
+    <p class="card-text mb-2">
+      <i class="bi bi-bar-chart-line text-muted"></i>
+      <strong> Score :</strong>
+      <span *ngIf="m.score_team1 !== null && m.score_team2 !== null">
+        {{ m.score_team1 }} - {{ m.score_team2 }}
+      </span>
+      <span *ngIf="m.score_team1 === null || m.score_team2 === null">
+        À venir
+      </span>
+    </p>
+
+    <p class="card-text mb-4">
+      <i class="bi bi-info-circle text-muted"></i>
+      <strong> Statut :</strong>
+      <span
+        [ngClass]="{
+          'badge bg-success': m.status === 'En cours',
+          'badge bg-danger': m.status === 'Terminé',
+          'badge bg-warning text-dark': m.status === 'Prévu'
+        }"
+        class="ms-2"
+      >
+        {{ m.status }}
+      </span>
+    </p>
+
+    <a routerLink="/" class="btn btn-outline-dark btn-sm">
+      ← Retour à l’accueil
+    </a>
+  </div>
+</div>
