@@ -1,0 +1,33 @@
+<div class="login-form">
+  <h2>Connexion</h2>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        required
+        [(ngModel)]="username"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        required
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">
+      Se connecter
+    </button>
+  </form>
+  <p *ngIf="loginFailed" class="text-danger">Échec de la connexion, veuillez réessayer.</p>
+</div>

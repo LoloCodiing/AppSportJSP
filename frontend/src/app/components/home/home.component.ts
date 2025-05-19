@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatchService } from '../../services/match.service';
 import { Match } from '../../models/match.model';
-import { Team } from '../../models/team.model'; // ⬅️ ajoute ce modèle
-import { TeamService } from '../../services/team.service'; // ⬅️ ton service d’équipes
+import { Team } from '../../models/team.model';
+import { TeamService } from '../../services/team.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -17,5 +18,4 @@ export class AppComponent {
     const value = (event.target as HTMLSelectElement).value;
     window.dispatchEvent(new CustomEvent('categoryChange', { detail: value }));
   }
-
 }
