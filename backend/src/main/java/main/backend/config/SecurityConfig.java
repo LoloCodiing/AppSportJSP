@@ -2,6 +2,7 @@ package main.backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -23,8 +24,9 @@ public class SecurityConfig {
                 .cors(withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/matches/**","/teams/**").permitAll()
-                        //.requestMatchers().authenticated()
+                        .requestMatchers(HttpMethod.GET, "/matches/**","/teams/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/matches/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/matches/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults());
