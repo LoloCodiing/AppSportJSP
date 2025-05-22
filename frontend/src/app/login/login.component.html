@@ -1,0 +1,63 @@
+<div *ngIf="!isLoggedIn()" class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Connexion</h2>
+          <form (ngSubmit)="login()" #f="ngForm" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                name="email"
+                [(ngModel)]="email"
+                required
+                #emailField="ngModel"
+              />
+              <div
+                *ngIf="emailField.invalid && emailField.touched"
+                class="form-text text-danger"
+              >
+                Veuillez saisir un email valide.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input
+                id="password"
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="password"
+                required
+                minlength="6"
+                #pwdField="ngModel"
+              />
+              <div
+                *ngIf="pwdField.invalid && pwdField.touched"
+                class="form-text text-danger"
+              >
+                Le mot de passe doit comporter au moins 6 caractères.
+              </div>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger">
+              {{ errorMessage }}
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="f.invalid"
+            >
+              Se connecter
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
