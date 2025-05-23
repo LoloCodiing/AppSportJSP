@@ -32,9 +32,7 @@ export class MatchService {
   //     { headers }
   //   );
   // }
-
-
-  updateMatch(id: number, match: Match): Observable<Match> {
-    return this.http.put<Match>(`${this.apiUrl}/${id}`, match);
+  updateMatch(id: number, match: MatchAdd): Observable<Match> {
+    return this.http.put<Match>(`${this.apiUrl}/edit/${id}`, match);
   }
 }

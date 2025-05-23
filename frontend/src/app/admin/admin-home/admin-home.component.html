@@ -45,8 +45,8 @@
               <i class="bi bi-bar-chart-line"></i>
               {{ match.team1.name }} - {{ match.team2.name }}
             </p>
-            <a [routerLink]="['/match', match.id]" class="btn btn-sm btn-outline-dark w-100">
-              <i class="bi bi-eye"></i> Voir détails
+            <a [routerLink]="['/admin/edit', match.id]" class="btn btn-sm btn-outline-primary w-100">
+              <i class="bi bi-pencil-square"></i> Modifier
             </a>
           </div>
         </div>

@@ -13,8 +13,8 @@ export interface Match {
 }
 
 export interface MatchAdd {
-  team1: number;
-  team2: number;
+  team1: { id: number };
+  team2: { id: number };
   category: string;
   date_match: string;
   status: string;
@@ -22,3 +22,4 @@ export interface MatchAdd {
   score_team2: number | null;
   stadium: string;
 }
+

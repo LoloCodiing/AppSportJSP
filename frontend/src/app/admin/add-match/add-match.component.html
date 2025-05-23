@@ -1,1 +1,88 @@
-<p>add-match works!</p>
+<div class="container mt-4">
+  <h2>➕ Ajouter un Match</h2>
+
+  <form (ngSubmit)="onSubmit()" #matchForm="ngForm">
+    <div class="row mb-3">
+      <div class="col">
+        <label class="form-label">Équipe 1</label>
+        <select
+          class="form-select"
+          [(ngModel)]="newMatch.team1.id"
+          name="team1"
+          required
+        >
+          <option value="" disabled selected>Choisissez une équipe</option>
+          <option *ngFor="let team of teams" [value]="team.id">
+            {{ team.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="col">
+        <label class="form-label">Équipe 2</label>
+        <select
+          class="form-select"
+          [(ngModel)]="newMatch.team2.id"
+          name="team2"
+          required
+        >
+          <option value="" disabled selected>Choisissez une équipe</option>
+          <option *ngFor="let team of teams" [value]="team.id">
+            {{ team.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Catégorie</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="newMatch.category"
+        name="category"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Date et Heure</label>
+      <input
+        type="datetime-local"
+        class="form-control"
+        [(ngModel)]="newMatch.date_match"
+        name="date_match"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Stade</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="newMatch.stadium"
+        name="stadium"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Statut</label>
+      <select
+        class="form-select"
+        [(ngModel)]="newMatch.status"
+        name="status"
+        required
+      >
+        <option value="Prévu">Prévu</option>
+        <option value="En cours">En cours</option>
+        <option value="Terminé">Terminé</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+      <i class="bi bi-check-circle"></i> Créer le match
+    </button>
+  </form>
+</div>

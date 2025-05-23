@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
 
     this.upcomingMatches = this.matches.filter(m =>
       m.status === 'Prévu' &&
-      new Date(m.date_match) > endOfWeek &&
+      new Date(m.date_match) &&
       (!this.filteredCategory || m.category === this.filteredCategory)
     );
 

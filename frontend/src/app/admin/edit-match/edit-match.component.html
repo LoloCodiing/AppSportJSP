@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <h2 class="mb-3">✏️ Modifier le match</h2>
+
+  <form *ngIf="match" (ngSubmit)="onSubmit()" #editForm="ngForm">
+    <div class="mb-3">
+      <label class="form-label">Catégorie</label>
+      <input [(ngModel)]="match.category" name="category" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Stade</label>
+      <input [(ngModel)]="match.stadium" name="stadium" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Date</label>
+      <input type="datetime-local" [(ngModel)]="match.date_match" name="date_match" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Équipe 1</label>
+      <select [(ngModel)]="selectedTeam1Id" name="team1" class="form-select" required>
+        <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Équipe 2</label>
+      <select [(ngModel)]="selectedTeam2Id" name="team2" class="form-select" required>
+        <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Statut</label>
+      <select [(ngModel)]="match.status" name="status" class="form-select" required>
+        <option value="Prévu">Prévu</option>
+        <option value="En cours">En cours</option>
+        <option value="Terminé">Terminé</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label class="form-label">Score Équipe 1</label>
+        <input type="number" [(ngModel)]="match.score_team1" name="score_team1" class="form-control" />
+      </div>
+      <div class="col">
+        <label class="form-label">Score Équipe 2</label>
+        <input type="number" [(ngModel)]="match.score_team2" name="score_team2" class="form-control" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">💾 Enregistrer</button>
+  </form>
+</div>

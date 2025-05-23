@@ -63,26 +63,23 @@ export class AdminHomeComponent implements OnInit{
       const matchDate = new Date(m.date_match);
       return m.status === 'Prévu' &&
         matchDate >= startOfWeek &&
-        matchDate <= endOfWeek &&
-        (!this.filteredCategory || m.category === this.filteredCategory);
+        matchDate <= endOfWeek;
     });
 
     this.upcomingMatches = this.matches.filter(m =>
       m.status === 'Prévu' &&
-      new Date(m.date_match) > endOfWeek &&
-      (!this.filteredCategory || m.category === this.filteredCategory)
+      new Date(m.date_match)
     );
 
     this.liveMatches = this.matches.filter(m =>
-      m.status === 'En cours' &&
-      (!this.filteredCategory || m.category === this.filteredCategory)
+      m.status === 'En cours'
     );
 
     this.finishedMatches = this.matches.filter(m =>
-      m.status === 'Terminé' &&
-      (!this.filteredCategory || m.category === this.filteredCategory)
+      m.status === 'Terminé'
     );
   }
+
 
   setCategory(category: string) {
     this.filteredCategory = category;
