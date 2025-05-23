@@ -1,0 +1,56 @@
+<!-- EN-TÊTE DE LA PAGE -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1 class="mb-1">🎛️ Tableau de bord - Matchs</h1>
+    <p class="text-muted mb-0">Gérez les rencontres et suivez leur progression</p>
+  </div>
+  <div>
+    <a routerLink="/admin/add-match" class="btn btn-outline-primary me-2">
+      <i class="bi bi-plus-circle"></i> Nouveau match
+    </a>
+    <button class="btn btn-outline-secondary" (click)="ngOnInit()">
+      <i class="bi bi-arrow-repeat"></i> Rafraîchir
+    </button>
+  </div>
+</div>
+
+<!-- SECTIONS MATCHES -->
+<ng-container *ngFor="let section of [
+  { title: 'En cours', color:'success', icon:'bi-play-circle', data: liveMatches },
+  { title: 'Matchs à venir', color:'warning', icon:'bi-clock-history', data: upcomingMatches },
+  { title: 'Terminés', color:'danger', icon:'bi-flag-checkered', data: finishedMatches }
+]">
+  <div class="mt-5">
+    <h4 class="text-{{section.color}}">
+      <i class="bi {{ section.icon }}"></i> {{ section.title }}
+    </h4>
+
+    <div *ngIf="section.data.length === 0" class="alert alert-light border text-muted">
+      Aucun match dans cette section.
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
+      <div *ngFor="let match of section.data" class="col">
+        <div class="card h-100 border-0 shadow-sm bg-white">
+          <div class="card-body">
+            <h5 class="card-title d-flex justify-content-between align-items-center">
+              <span>Match #{{ match.id }}</span>
+              <span class="badge bg-dark">{{ match.category }}</span>
+            </h5>
+            <p class="mb-1 text-muted">
+              <i class="bi bi-calendar-event"></i>
+              {{ match.date_match | date:'fullDate' }} à {{ match.date_match | date:'shortTime' }}
+            </p>
+            <p *ngIf="match.status === 'Terminé'" class="mb-2 fw-bold">
+              <i class="bi bi-bar-chart-line"></i>
+              {{ match.team1.name }} - {{ match.team2.name }}
+            </p>
+            <a [routerLink]="['/match', match.id]" class="btn btn-sm btn-outline-dark w-100">
+              <i class="bi bi-eye"></i> Voir détails
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

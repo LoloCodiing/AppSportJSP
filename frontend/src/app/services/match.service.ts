@@ -6,7 +6,7 @@ import {AuthService} from '../auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class MatchService {
-  private apiUrl = 'http://localhost:4200/matches';
+  private apiUrl = 'http://localhost:8080/matches';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -20,12 +20,8 @@ export class MatchService {
   }
 
   createMatch(match: MatchAdd): Observable<Match> {
-    //const headers = this.authService.getAuthHeaders() ?? new HttpHeaders();
-    const headers = new HttpHeaders({
-      Authorization: 'Basic ' + btoa('aaa:bbb') // remplace par tes vrais identifiants
-    });
-    console.log(headers)
-    return this.http.post<Match>(`${this.apiUrl}/add`, match, { headers });
+
+    return this.http.post<Match>(`${this.apiUrl}/add`, match);
   }
 
   // addScore(match: Match, id: number, isTeam1: boolean, scoreToAdd: number): Observable<Match> {
