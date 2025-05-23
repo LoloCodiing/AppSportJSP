@@ -20,8 +20,11 @@ export class MatchService {
   }
 
   createMatch(match: MatchAdd): Observable<Match> {
-
-    return this.http.post<Match>(`${this.apiUrl}/add`, match);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa('admin:adminpassword')
+    });
+    return this.http.post<Match>(`${this.apiUrl}/add`, match, { headers });
   }
 
   // addScore(match: Match, id: number, isTeam1: boolean, scoreToAdd: number): Observable<Match> {
@@ -33,6 +36,10 @@ export class MatchService {
   //   );
   // }
   updateMatch(id: number, match: MatchAdd): Observable<Match> {
-    return this.http.put<Match>(`${this.apiUrl}/edit/${id}`, match);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa('admin:adminpassword')
+    });
+    return this.http.put<Match>(`${this.apiUrl}/edit/${id}`, match, { headers });
   }
 }

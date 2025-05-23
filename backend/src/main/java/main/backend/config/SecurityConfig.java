@@ -24,9 +24,9 @@ public class SecurityConfig {
                 .cors(withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/matches/**","/teams/**").permitAll()
-                        //.requestMatchers(HttpMethod.POST, "/matches/**").authenticated()
-                        //.requestMatchers(HttpMethod.PUT, "/matches/**").authenticated()
+                        .requestMatchers(HttpMethod.GET,"/matches/**","/teams/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/matches/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/matches/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults());
